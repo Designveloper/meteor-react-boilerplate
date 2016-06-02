@@ -3,9 +3,9 @@ import { ReactiveDict } from 'meteor/reactive-dict';
 
 import { bindFuncInObj } from '../../lib/bindFunctionsInObj.js';
 
-import He from './helpers';
-import L from './logicFuncs';
-import Ha from './handlers';
+import He from './CounterContainerHe.js';
+import L from './CounterContainerLF.js';
+import Ha from './CounterContainerHa.js';
 
 import { Counter } from '../../components/Counter/Counter.jsx';
 
