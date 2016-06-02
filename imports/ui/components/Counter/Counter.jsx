@@ -8,13 +8,17 @@ export class Counter extends Component {
   render() {
     const {
       totalCount,
+      totalCountMultiplied,
     } = this.props;
 
     return (
-      <div className=""
-        onClick={this.props.clickRootHandler}
-      >
-        Total counter: {totalCount}
+      <div onClick={this.props.clickRootHandler}>
+        <div>
+          Total counter: {totalCount}
+        </div>
+        <div>
+          Multiplied total counter: {totalCountMultiplied}
+        </div>
         <CounterOne {...this.props} />
         <CounterTwo {...this.props} />
         <CounterThree {...this.props} />
@@ -25,5 +29,6 @@ export class Counter extends Component {
 
 Counter.propTypes = {
   totalCount: PropTypes.number.isRequired,
+  totalCountMultiplied: PropTypes.number.isRequired,
   clickRootHandler: PropTypes.func,
 };

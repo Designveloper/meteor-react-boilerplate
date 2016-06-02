@@ -6,7 +6,7 @@ import { Layout } from '../../ui/layouts/Layout.jsx';
 
 import CounterContainer from '../../ui/pages/CounterContainer/CounterContainer.js';
 
-FR.route('/:id', {
+FR.route('/:multiplier', {
   name: 'Home',
   action(params) {
     mount(Layout, {

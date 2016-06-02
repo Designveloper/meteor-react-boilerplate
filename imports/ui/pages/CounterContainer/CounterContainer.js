@@ -1,45 +1,85 @@
 import { createContainer } from 'meteor/react-meteor-data';
-import { ReactiveDict } from 'meteor/reactive-dict';
-
-import { bindFuncInObj } from '../../lib/bindFunctionsInObj.js';
-
-import He from './CounterContainerHe.js';
-import L from './CounterContainerLF.js';
-import Ha from './CounterContainerHa.js';
+import { Session } from 'meteor/session';
 
 import { Counter } from '../../components/Counter/Counter.jsx';
 
-const dict = new ReactiveDict('CounterContainerDict');
-dict.setDefault('counter1', 0);
-dict.setDefault('counter2', 0);
-dict.setDefault('counter3', 0);
-
-const store = {
-  props: {},
-  dict,
-  He: {},
-  L: {},
-};
-
-store.He = bindFuncInObj(He, store);
-
-store.L = bindFuncInObj(L, store);
-
-const sHa = bindFuncInObj(Ha, {
-  He: store.He,
-  L: store.L,
+Session.set({
+  counter1: 0,
+  counter2: 0,
+  counter3: 0,
 });
 
+function getCounter1() {
+  return Session.get('counter1');
+}
+
+function getCounter2() {
+  return Session.get('counter2');
+}
+
+function getCounter3() {
+  return Session.get('counter3');
+}
+
+function getTotalCount() {
+  return getCounter1() + getCounter2() + getCounter3();
+}
+
+function setCounter1(val) {
+  Session.set('counter1', val);
+}
+
+function setCounter2(val) {
+  Session.set('counter2', val);
+}
+
+function setCounter3(val) {
+  Session.set('counter3', val);
+}
+
+function increaseCounter1() {
+  setCounter1(getCounter1() + 1);
+}
+
+function increaseCounter2() {
+  setCounter2(getCounter2() + 1);
+}
+
+function increaseCounter3() {
+  setCounter3(getCounter3() + 1);
+}
+
+function decreaseCounter1() {
+  setCounter1(getCounter1() - 1);
+}
+
+function decreaseCounter2() {
+  setCounter2(getCounter2() - 1);
+}
+
+function getmultiplier({ multiplier }) {
+  return parseInt(multiplier, 10);
+}
+
 export default createContainer((props) => {
-  const {} = props;
-
-  store.props = props;
-
   return {
-    totalCount: store.He.getTotalCount(),
-    counter1: store.He.getCounter1(),
-    counter2: store.He.getCounter2(),
-    counter3: store.He.getCounter3(),
-    ...sHa,
+    totalCount: getTotalCount(),
+    totalCountMultiplied: getTotalCount() * getmultiplier(props),
+    counter1: getCounter1(),
+    counter2: getCounter2(),
+    counter3: getCounter3(),
+    clickCounter1Handler() {
+      increaseCounter1();
+    },
+    clickCounter2Handler() {
+      increaseCounter1();
+      increaseCounter2();
+    },
+    clickCounter3Handler() {
+      decreaseCounter1();
+      decreaseCounter2();
+
+      increaseCounter3();
+    },
   };
 }, Counter);

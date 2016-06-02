@@ -24,3 +24,4 @@ react-meteor-data
 templating
 kadira:flow-router
 reactive-dict
+session
