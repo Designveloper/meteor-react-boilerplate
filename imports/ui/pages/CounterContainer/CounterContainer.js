@@ -1,24 +1,26 @@
 import { createContainer } from 'meteor/react-meteor-data';
-import { Session } from 'meteor/session';
+import { ReactiveDict } from 'meteor/reactive-dict';
 
 import { Counter } from '../../components/Counter/Counter.jsx';
 
-Session.set({
+const dict = new ReactiveDict('CounterContainer');
+
+dict.set({
   counter1: 0,
   counter2: 0,
   counter3: 0,
 });
 
 function getCounter1() {
-  return Session.get('counter1');
+  return dict.get('counter1');
 }
 
 function getCounter2() {
-  return Session.get('counter2');
+  return dict.get('counter2');
 }
 
 function getCounter3() {
-  return Session.get('counter3');
+  return dict.get('counter3');
 }
 
 function getTotalCount() {
@@ -26,15 +28,15 @@ function getTotalCount() {
 }
 
 function setCounter1(val) {
-  Session.set('counter1', val);
+  dict.set('counter1', val);
 }
 
 function setCounter2(val) {
-  Session.set('counter2', val);
+  dict.set('counter2', val);
 }
 
 function setCounter3(val) {
-  Session.set('counter3', val);
+  dict.set('counter3', val);
 }
 
 function increaseCounter1() {
