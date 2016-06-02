@@ -1,6 +1,6 @@
 import React, { PropTypes } from 'react';
 
-export const TestChildOne = (props) => {
+export const CounterOne = (props) => {
   const {
     clickCounter1Handler,
     counter1,
@@ -14,7 +14,7 @@ export const TestChildOne = (props) => {
   );
 };
 
-TestChildOne.propTypes = {
+CounterOne.propTypes = {
   counter1: PropTypes.number.isRequired,
   increaseCounter1: PropTypes.func,
   clickCounter1Handler: PropTypes.func,

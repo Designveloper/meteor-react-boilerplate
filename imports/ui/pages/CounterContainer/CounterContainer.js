@@ -7,11 +7,12 @@ import He from './helpers';
 import L from './logicFuncs';
 import Ha from './handlers';
 
-import { Test } from '../../components/Test/Test.jsx';
+import { Counter } from '../../components/Counter/Counter.jsx';
 
-const dict = new ReactiveDict('TestContainerDict');
+const dict = new ReactiveDict('CounterContainerDict');
 dict.setDefault('counter1', 0);
 dict.setDefault('counter2', 0);
+dict.setDefault('counter3', 0);
 
 const store = {
   props: {},
@@ -36,8 +37,9 @@ export default createContainer((props) => {
 
   return {
     totalCount: store.He.getTotalCount(),
-    counter1: dict.get('counter1'),
-    counter2: dict.get('counter2'),
+    counter1: store.He.getCounter1(),
+    counter2: store.He.getCounter2(),
+    counter3: store.He.getCounter3(),
     ...sHa,
   };
-}, Test);
+}, Counter);

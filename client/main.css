@@ -1,1 +1,9 @@
 /* CSS declarations go here */
+
+.main-app {
+  text-align: center;
+}
+
+div {
+  margin: 30px;
+}

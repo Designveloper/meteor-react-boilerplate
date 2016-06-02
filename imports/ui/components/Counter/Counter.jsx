@@ -1,8 +1,9 @@
 import React, { Component, PropTypes } from 'react';
-import { TestChildOne } from './TestChildOne/TestChildOne.jsx';
-import { TestChildTwo } from './TestChildTwo/TestChildTwo.jsx';
+import { CounterOne } from './CounterOne/CounterOne.jsx';
+import { CounterTwo } from './CounterTwo/CounterTwo.jsx';
+import { CounterThree } from './CounterThree/CounterThree.jsx';
 
-export class Test extends Component {
+export class Counter extends Component {
   clickEventHandler() {}
   render() {
     const {
@@ -14,14 +15,15 @@ export class Test extends Component {
         onClick={this.props.clickRootHandler}
       >
         Total counter: {totalCount}
-        <TestChildOne {...this.props} />
-        <TestChildTwo {...this.props} />
+        <CounterOne {...this.props} />
+        <CounterTwo {...this.props} />
+        <CounterThree {...this.props} />
       </div>
     );
   }
 }
 
-Test.propTypes = {
+Counter.propTypes = {
   totalCount: PropTypes.number.isRequired,
   clickRootHandler: PropTypes.func,
 };

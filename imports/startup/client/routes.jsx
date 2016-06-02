@@ -4,13 +4,13 @@ import { mount } from 'react-mounter';
 
 import { Layout } from '../../ui/layouts/Layout.jsx';
 
-import TestContainer from '../../ui/pages/TestContainer/TestContainer.js';
+import CounterContainer from '../../ui/pages/CounterContainer/CounterContainer.js';
 
 FR.route('/:id', {
   name: 'Home',
   action(params) {
     mount(Layout, {
-      content: <TestContainer {...params} />,
+      content: <CounterContainer {...params} />,
     });
   },
 });
