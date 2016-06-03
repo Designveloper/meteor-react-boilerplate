@@ -5,7 +5,7 @@ import { Counter } from '../../components/Counter/Counter.jsx';
 import store from './store.js';
 
 import He from './helpers.js';
-import Ha from './handlers.js';
+import Ha from './handlers';
 
 
 export default createContainer((props) => {
