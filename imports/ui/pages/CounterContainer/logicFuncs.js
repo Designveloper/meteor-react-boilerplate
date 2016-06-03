@@ -1,15 +1,14 @@
-import He from './helpers.js';
-import store from './store.js';
+import He from './helpers.js';;
 
 export default {
   setCounter1(val) {
-    store.dict.set('counter1', val);
+    dict.set('counter1', val);
   },
   setCounter2(val) {
-    store.dict.set('counter2', val);
+    dict.set('counter2', val);
   },
   setCounter3(val) {
-    store.dict.set('counter3', val);
+    dict.set('counter3', val);
   },
 
   increaseCounter1() {

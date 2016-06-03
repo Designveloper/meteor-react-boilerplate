@@ -2,14 +2,18 @@ import { createContainer } from 'meteor/react-meteor-data';
 
 import { Counter } from '../../components/Counter/Counter.jsx';
 
-import store from './store.js';
+const dict = new ReactiveDict('CounterContainer');
+
+dict.set({
+  counter1: 0,
+  counter2: 0,
+  counter3: 0,
+});
 
 import He from './helpers.js';
 import Ha from './handlers.js';
 
-
 export default createContainer((props) => {
-  store.props = props;
   return {
     totalCount: He.getTotalCount(),
     totalCountMultiplied: He.getTotalCount() * He.getmultiplier(),
