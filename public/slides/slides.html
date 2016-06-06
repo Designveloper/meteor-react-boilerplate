@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>Meteor - Structuring React Container</title>
+
+		<link rel="stylesheet" href="/slides/css/reveal.css">
+    <link rel="stylesheet" href="/slides/css/night.css" id="theme">
+
+    <style type="text/css" media="screen">
+			.slides section.has-dark-background,
+			.slides section.has-dark-background h3 {
+				color: #fff;
+			}
+			.slides section.has-light-background,
+			.slides section.has-light-background h3 {
+				color: #222;
+			}
+		</style>
+	</head>
+
+	<body>
+
+		<div class="reveal">
+
+			<div class="slides">
+				<section data-transition="convex">
+					<h2>Meteor</h2>
+          <h2>Structuring React Container</h2>
+					<p>How should a Meteor-React Container look like?</p>
+				</section>
+
+				<section data-transition="convex">
+          <section>
+            <h3>React in Meteor</h3>
+            <p>Naive level</p>
+          </section>
+					<section>
+            <h3>Basic Meteor 1.3 structure</h3>
+					</section>
+          <section>
+            <h3>Official createContainer</h3>
+          </section>
+				</section>
+
+        <section data-transition="convex">
+          <section>
+            <h3>What are the problems?</h3>
+          </section>
+          <section>
+            <h3>Where are my container state?</h3>
+          </section>
+          <section>
+            <h3>Meteor ReactiveDict</h3>
+          </section>
+          <section>
+            <h3>The 80/20 rule</h3>
+          </section>
+          <section>
+            <h3>Maintainability</h3>
+          </section>
+				</section>
+
+        <section data-transition="convex">
+          <section>
+            <h3>Let's start refactoring</h3>
+          </section>
+					<section>
+            <h3>Decoupling</h3>
+					</section>
+          <section>
+            <h3>Handlers</h3>
+          </section>
+          <section>
+            <h3>Logic Functions</h3>
+          </section>
+          <section>
+            <h3>Helpers</h3>
+          </section>
+				</section>
+
+        <section data-transition="convex">
+          <section>
+            <h3>Look nice, but there's something wrong</h3>
+          </section>
+          <section>
+            <h3>They are not connected!!!</h3>
+          </section>
+          <section>
+            <h3>Store</h3>
+          </section>
+					<section>
+            <h3>Level up: it can even be better</h3>
+          </section>
+				</section>
+
+        <section data-transition="convex">
+					<h3>Thank you</h3>
+				</section>
+
+			</div>
+
+		</div>
+
+		<script src="/slides/js/reveal.js"></script>
+
+		<script>
+
+			Reveal.initialize({
+				slideNumber: true,
+			});
+
+		</script>
+
+	</body>
+</html>
