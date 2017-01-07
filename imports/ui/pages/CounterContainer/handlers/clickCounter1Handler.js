@@ -1,5 +1,5 @@
-import L from '../logicFuncs.js';
+// import L from '../logicFuncs.js';
 
-export function clickCounter1Handler() {
+export function clickCounter1Handler(L) {
   L.increaseCounter1();
 }
